@@ -178,8 +178,8 @@ body{overflow-x:clip}
 .reviews-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
 .reviews-head h2{margin:18px 0 0}
 .dark-band .reviews-head h2{margin-bottom:0}
-.google-badge{display:flex;gap:14px;align-items:center;background:#ffffff10;border:1px solid #ffffff25;padding:14px 18px;max-width:380px}
-.google-badge .ui-icon{width:34px;height:34px}.google-badge small{display:block;color:#cdb596;margin-top:3px;line-height:1.4}
+.google-badge{display:flex;gap:16px;align-items:center}
+
 .review-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .review-grid figure{margin:0;background:#3a2a1f;border:1px solid #ffffff18;padding:24px;display:flex;flex-direction:column;gap:16px}
 .review-top{display:flex;justify-content:space-between;align-items:center}
@@ -228,7 +228,7 @@ h1,h2,h3,.brand{font-family:Outfit, Arial, sans-serif}
 .amenities article,.game-card,.demo-pill,.notice{background:#dcebe3}
 .footer,.dark-band,.scoreboard{background:var(--deep);color:#f2f8f5}
 .review-grid figure{background:#152e47;border:1px solid #ffffff1a}
-.dark-band .light,.google-badge small,.review-grid small,.footer-grid p,.footer-grid a:not(.brand),.footer-bottom,.light{color:#b6cde0}
+.dark-band .light,
 .assistant-log .assistant{background:#dcebe3;color:var(--ink)}
 .package-card{background:var(--white)}
 .square,.live-dot{background:var(--accent)}
@@ -237,9 +237,9 @@ h1,h2,h3,.brand{font-family:Outfit, Arial, sans-serif}
 .nav a:not(.button):hover,.nav a[aria-current=page],.home-games-list a:hover{color:var(--accent)}
 
 /* Google rating summary, dotted non-white sections & contact map */
-.google-rating-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.google-score{font-size:1.15rem;line-height:1;color:#fff}
-.google-count{font-size:.78rem;color:rgba(255,255,255,.72)}
+.google-rating-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.google-score{font-size:2.2rem;font-weight:700;line-height:1;color:#fff;letter-spacing:-.04em}
+.google-count{font-size:.85rem;color:rgba(255,255,255,.65)}
 .dark-band,.footer,.scoreboard{background-image:radial-gradient(rgba(255,255,255,.085) 1px,transparent 1px);background-size:22px 22px}
 .faq-section,.gallery-section,.game-callout,.market-list-cta,.admin-sidebar{background-image:radial-gradient(color-mix(in srgb,var(--ink) 8%,transparent) 1px,transparent 1px);background-size:20px 20px}
 .contact-map-section{padding-bottom:110px}
