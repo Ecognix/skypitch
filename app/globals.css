@@ -133,7 +133,7 @@ em{color:var(--accent)}
 .button-dark{background:var(--accent)}.button-dark:hover{background:var(--deep)}
 .button-outline{border-color:var(--deep)}
 .hero{background:none}
-.hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:radial-gradient(ellipse 95% 85% at 95% 22%,#0e86e52e 0%,transparent 72%);pointer-events:none;z-index:0}
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:radial-gradient(ellipse 95% 85% at 100% 22%,#0e86e533 0%,transparent 70%);pointer-events:none;z-index:0}
 .hero{overflow:hidden}
 body{overflow-x:clip}
 .pitch-scene,.hero-side,.hero-search{position:relative;z-index:1}
@@ -218,7 +218,7 @@ h1,h2,h3,.brand{font-family:Outfit, Arial, sans-serif}
 .footer .brand-logo{height:58px;width:auto;object-fit:contain;display:block;flex:none}
 @media(max-width:760px){.brand-logo{height:58px;width:auto;object-fit:contain;display:block;flex:none}}
 .hero{background:none}
-.hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:radial-gradient(ellipse 95% 85% at 95% 22%,#0e86e52e 0%,transparent 72%);pointer-events:none;z-index:0}
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:radial-gradient(ellipse 95% 85% at 100% 22%,#0e86e533 0%,transparent 70%);pointer-events:none;z-index:0}
 .pitch-scene,.hero-side,.hero-search{position:relative;z-index:1}
 .hero-side{position:absolute}
 .feature-card{background:var(--white);border:1px solid var(--line)}
@@ -293,24 +293,6 @@ h1,h2,h3,.brand{font-family:Outfit, Arial, sans-serif}
 /* Prevent mobile zoom on input focus (iOS zooms when font-size < 16px) */
 input, select, textarea { font-size: max(16px, 1em) !important; }
 @media (max-width: 760px) { input, select, textarea { font-size: 16px !important; } }
-/* Undo any relative/static overrides that might come from media queries */
-@media (max-width: 1050px) {
-  .site-header {
-    position: sticky !important;
-    top: 0 !important;
-  }
-}
-@media (max-width: 760px) {
-  .site-header {
-    position: sticky !important;
-    top: 0 !important;
-    border-bottom: 0;
-  }
-  /* Mobile nav dropdown sits below sticky header */
-  .nav {
-    top: 70px !important;
-  }
-}
 /* =============================================
    FIXED HEADER - reliable across all browsers
    ============================================= */
@@ -354,22 +336,30 @@ body > main {
     width: 100% !important;
   }
 }
-/* Search box: proper containment without clipping borders */
-.home-search-wrap{width:100%;box-sizing:border-box}
-.home-search{width:100%;box-sizing:border-box;overflow:hidden}
-.search-fields{width:100%;box-sizing:border-box}
-.search-fields label{min-width:0;box-sizing:border-box}
-.search-fields input,.search-fields select{width:100%;min-width:0;box-sizing:border-box}
-@media(max-width:760px){
-  .hero-search{padding:0;overflow:visible}
-  .hero-search .home-search-wrap{padding:0 18px;box-sizing:border-box;overflow:visible}
-  .hero-search .home-search{overflow:visible;width:100%;box-sizing:border-box}
-  .search-fields{flex-direction:column;gap:10px}
-  .search-fields label{flex:1 1 auto;width:100%}
-  .search-fields .button{width:100%;justify-content:center}
-  .search-tabs{gap:14px;overflow-x:auto}
+
+/* Mobile viewport containment + date input & search box fix */
+html, body { overflow-x: clip; max-width: 100%; }
+.home-search-wrap { width: 100%; max-width: 100%; box-sizing: border-box; }
+.home-search { width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden; }
+.search-fields { width: 100%; max-width: 100%; box-sizing: border-box; }
+.search-fields label { min-width: 0; max-width: 100%; box-sizing: border-box; }
+.search-fields input,
+.search-fields select,
+input[type="date"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
 }
-@media(max-width:420px){
-  .hero-search .home-search-wrap{padding:0 14px}
-  .search-tabs button{font-size:.78rem;padding:11px 0}
+@media (max-width: 760px) {
+  .hero-search { width: 100%; max-width: 100%; min-width: 0; padding: 0; }
+  .hero-search .home-search-wrap { padding: 0; width: 100%; max-width: 100%; }
+  .hero-search .home-search { padding: 10px 16px 18px; width: 100%; max-width: 100%; }
+  .search-fields { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .search-fields label { width: 100%; min-width: 0; }
+  .search-fields .button { width: 100%; justify-content: center; }
+  .search-tabs { gap: 16px; overflow-x: auto; }
 }
