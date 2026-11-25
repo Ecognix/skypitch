@@ -1,9 +1,6 @@
 "use client";
 
 import Icon from "./Icon";
-
-
-
 import { useState } from "react";
 import { readData, writeData } from "../lib/demo";
 
@@ -20,7 +17,42 @@ export default function Contact() {
       setNotice("Saved on this browser only. Your message has not been sent to the venue.");
     } catch { setNotice("Your message could not be saved. Check your browser storage settings."); }
   }
-  return <><section className="section wrap contact-grid"><div><div className="eyebrow"><span className="square" /> SAY HELLO</div><h1>Let's talk<br /><em>about the game.</em></h1><p className="contact-intro">Questions about the pitch, planning a tournament or bringing your team? We're here for all of it.</p><div className="contact-options"><div><span>01 / VISIT</span><strong>Sundarpur, Zoo Rd, Guwahati</strong><p>Zoo Rd, above Bidang MMA & Fitness Gym, Sundarpur, Guwahati, Assam 781005</p></div><div><span>02 / CALL OR MESSAGE</span><strong>Contact details coming soon</strong><p>Phone and WhatsApp details will be shared once confirmed.</p></div><div><span>03 / SOCIAL</span><strong>Find us on Instagram</strong><p>Our official account will be announced soon.</p></div></div></div><div className="booking-card contact-form"><div className="eyebrow">DROP US A NOTE</div><h2>We're all ears.</h2><p>This form saves a message on this browser only. It does not send an enquiry yet; please don't enter sensitive information.</p><form onSubmit={submit} className="form-grid"><label>YOUR NAME<input required maxLength={80} value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} /></label><label>PHONE <span>(OPTIONAL)</span><input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} /></label><label className="full">EMAIL <span>(OPTIONAL)</span><input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} /></label><label className="full">WHAT'S IT ABOUT?<select value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })}><option>General question</option><option>Booking enquiry</option><option>Tournament or event</option><option>Partnership</option><option>Other</option></select></label><label className="full">MESSAGE<textarea required maxLength={500} rows="5" value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} /></label><button className="button button-dark full">Save message <span><Icon name="arrow" /></span></button></form>{notice && <p className="notice" role="status">{notice}</p>}</div></section>
+  return (
+    <>
+      <section className="section wrap contact-grid">
+        <div>
+          <div className="eyebrow"><span className="square" /> SAY HELLO</div>
+          <h1>Let&apos;s talk<br /><em>about the game.</em></h1>
+          <p className="contact-intro">Questions about the pitch, planning a tournament or bringing your team? We&apos;re here for all of it.</p>
+          <div className="contact-options">
+            <div><span>01 / VISIT</span><strong>Sundarpur, Zoo Rd, Guwahati</strong><p>Zoo Rd, above Bidang MMA & Fitness Gym, Sundarpur, Guwahati, Assam 781005</p></div>
+            <div>
+              <span>02 / CALL OR MESSAGE</span>
+              <strong>+91 88128 62976</strong>
+              <p>Call or message us on WhatsApp for slot enquiries and bookings.</p>
+              <div className="contact-btn-row">
+                <a href="https://wa.me/918812862976" target="_blank" rel="noopener noreferrer" className="button button-dark contact-btn">WhatsApp <span><Icon name="arrow" /></span></a>
+                <a href="tel:+918812862976" className="button button-outline contact-btn">Call now <span><Icon name="arrow" /></span></a>
+              </div>
+            </div>
+            <div><span>03 / SOCIAL</span><strong>Find us on Instagram</strong><p>Our official account will be announced soon.</p></div>
+          </div>
+        </div>
+        <div className="booking-card contact-form">
+          <div className="eyebrow">DROP US A NOTE</div>
+          <h2>We&apos;re all ears.</h2>
+          <p>This form saves a message on this browser only. It does not send an enquiry yet; please don&apos;t enter sensitive information.</p>
+          <form onSubmit={submit} className="form-grid">
+            <label>YOUR NAME<input required maxLength={80} value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} /></label>
+            <label>PHONE <span>(OPTIONAL)</span><input type="tel" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} /></label>
+            <label className="full">EMAIL <span>(OPTIONAL)</span><input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} /></label>
+            <label className="full">WHAT&apos;S IT ABOUT?<select value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })}><option>General question</option><option>Booking enquiry</option><option>Tournament or event</option><option>Partnership</option><option>Other</option></select></label>
+            <label className="full">MESSAGE<textarea required maxLength={500} rows="5" value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} /></label>
+            <button className="button button-dark full">Save message <span><Icon name="arrow" /></span></button>
+          </form>
+          {notice && <p className="notice" role="status">{notice}</p>}
+        </div>
+      </section>
       <section className="wrap contact-map-section">
         <div className="contact-map-head">
           <div>
@@ -40,5 +72,6 @@ export default function Contact() {
         </div>
         <p className="fine-print">Zoo Rd, above Bidang MMA & Fitness Gym, Sundarpur, Guwahati, Assam 781005</p>
       </section>
-  </>;
+    </>
+  );
 }
