@@ -132,7 +132,11 @@ html{font-variant-emoji:text}
 em{color:var(--accent)}
 .button-dark{background:var(--accent)}.button-dark:hover{background:var(--deep)}
 .button-outline{border-color:var(--deep)}
-.hero{background:radial-gradient(circle at 85% 20%,#f2c58f55,transparent 45%)}
+html,body{overflow-x:hidden}
+.hero{background:none}
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:radial-gradient(ellipse 95% 85% at 95% 22%,#0e86e52e 0%,transparent 72%);pointer-events:none;z-index:0}
+.pitch-scene,.hero-side,.hero-search{position:relative;z-index:1}
+.hero-side{position:absolute}
 .feature-card{background:var(--white);border:1px solid var(--line)}
 .feature-card:hover{border-color:var(--accent)}
 .dark-band{background:var(--deep);color:#f6e8d4;padding:110px 0}
@@ -209,10 +213,14 @@ em{color:var(--accent)}
 :root{--paper:#f2f8f5;--white:#ffffff;--ink:#0f2438;--deep:#0c2033;--muted:#52687a;--lime:#4da82c;--green:#38761d;--line:#d4e4dc;--accent:#0e86e5}
 body{font-family:Inter, Arial, sans-serif;background:var(--paper);color:var(--ink)}
 h1,h2,h3,.brand{font-family:Outfit, Arial, sans-serif}
-.brand-logo{height:48px;width:auto;object-fit:contain;display:block;flex:none}
-.footer .brand-logo{height:54px;}
-@media(max-width:760px){.brand-logo{height:38px}}
-.hero{background:radial-gradient(circle at 85% 20%,#0e86e529,transparent 48%)}
+.brand-logo{height:58px;width:auto;object-fit:contain;display:block;flex:none}
+.footer .brand-logo{height:58px;width:auto;object-fit:contain;display:block;flex:none}
+@media(max-width:760px){.brand-logo{height:58px;width:auto;object-fit:contain;display:block;flex:none}}
+html,body{overflow-x:hidden}
+.hero{background:none}
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:radial-gradient(ellipse 95% 85% at 95% 22%,#0e86e52e 0%,transparent 72%);pointer-events:none;z-index:0}
+.pitch-scene,.hero-side,.hero-search{position:relative;z-index:1}
+.hero-side{position:absolute}
 .feature-card{background:var(--white);border:1px solid var(--line)}
 .feature-card:nth-child(2){background:#e5f1eb}
 .feature-card:nth-child(3){background:#edf5f1}

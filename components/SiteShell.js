@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 export function Brand() {
-  return <Link href="/" className="brand" aria-label="Skypitch Arena home"><img src="/logo.png" alt="Skypitch Arena logo" className="brand-logo" /><span>SKYPITCH ARENA<small>GUWAHATI</small></span></Link>;
+  return <Link href="/" className="brand" aria-label="Skypitch Arena home"><img src="/logo.png" alt="Skypitch Arena" className="brand-logo" /></Link>;
 }
 
 export function SiteHeader() {
