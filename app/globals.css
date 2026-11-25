@@ -348,3 +348,20 @@ input, select, textarea { font-size: max(16px, 1em) !important; }
     top: 70px !important;
   }
 }
+
+/* Fix: right border of search card visible on mobile */
+@media (max-width: 760px) {
+  .hero-search { padding: 0 18px; box-sizing: border-box; }
+  .home-search-wrap { margin: 0; width: 100%; }
+  .home-search {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+    border-radius: 0;
+  }
+  .hero-search { overflow: visible !important; }
+  .wrap.hero-search { overflow: visible !important; }
+}
+@media (max-width: 420px) {
+  .hero-search { padding: 0 14px; }
+}
